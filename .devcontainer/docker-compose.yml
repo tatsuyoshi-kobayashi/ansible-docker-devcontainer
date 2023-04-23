@@ -1,0 +1,22 @@
+version: '3'
+services:
+  ansible:
+    container_name: ansible
+    build:
+      context: ./ansible
+    command: /bin/bash -c "while :; do sleep 10; done"
+    volumes:
+      - ../:/workspace
+
+  local_node:
+    container_name: local_node
+    privileged: true
+    ports:
+      - 8080:8080
+    volumes:
+      - docker_data:/var/lib/docker
+    build:
+      context: ./local_node
+
+volumes:
+  docker_data:

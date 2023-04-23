@@ -1,0 +1,19 @@
+{
+    "name": "ansible workspace",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "ansible",
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"redhat.ansible"
+			],
+			"settings": {
+				"files.associations": {
+					"*.yml": "ansible",
+					"docker-compose.yml": "yaml"
+				  }
+			}
+		}
+	}
+}
